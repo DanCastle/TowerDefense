@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Towers">
+      <UniqueIdentifier>{a2e1d7f1-5326-4f5a-baff-eb6200b92026}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Towers">
+      <UniqueIdentifier>{a00af5c3-d4fb-46d4-9558-b9ddd3743f67}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Background.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Collisions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vector2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\FileLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\UI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\Button.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\EnemyController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\Bullet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\Enemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\BasicTower.h">
+      <Filter>Header Files\Towers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\RavagerTower.h">
+      <Filter>Header Files\Towers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\Tower.h">
+      <Filter>Header Files\Towers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\SynTower.h">
+      <Filter>Header Files\Towers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\SabTower.h">
+      <Filter>Header Files\Towers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\SenTower.h">
+      <Filter>Header Files\Towers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\SuperTower.h">
+      <Filter>Header Files\Towers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Background.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Collisions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vector2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\FileLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\Button.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\EnemyController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\UI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\Bullet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\Enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\Tower.cpp">
+      <Filter>Source Files\Towers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\RavagerTower.cpp">
+      <Filter>Source Files\Towers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\BasicTower.cpp">
+      <Filter>Source Files\Towers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\SynTower.cpp">
+      <Filter>Source Files\Towers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\SabTower.cpp">
+      <Filter>Source Files\Towers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\SenTower.cpp">
+      <Filter>Source Files\Towers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\SuperTower.cpp">
+      <Filter>Source Files\Towers</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

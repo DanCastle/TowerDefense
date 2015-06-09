@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\BasicTower.h" />
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\Bullet.h" />
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\Button.h" />
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\Enemy.h" />
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\EnemyController.h" />
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\FileLoader.h" />
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\Game.h" />
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\RavagerTower.h" />
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\SabTower.h" />
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\SenTower.h" />
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\SuperTower.h" />
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\SynTower.h" />
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\Tower.h" />
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\UI.h" />
+    <ClInclude Include="include\Background.h" />
+    <ClInclude Include="include\Collisions.h" />
+    <ClInclude Include="include\vector2D.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\BasicTower.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\Bullet.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\Button.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\Enemy.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\EnemyController.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\FileLoader.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\Game.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\RavagerTower.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\SabTower.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\SenTower.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\SuperTower.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\SynTower.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\Tower.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\UI.cpp" />
+    <ClCompile Include="src\Background.cpp" />
+    <ClCompile Include="src\Collisions.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\vector2D.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A0AD225C-B10D-4D52-8F85-6501F735DF14}</ProjectGuid>
+    <RootNamespace>dave</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LibraryPath>..\SFML-2.0\lib;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>..\SFML-2.0\bin;$(ExecutablePath)</ExecutablePath>
+    <SourcePath>.\src;$(VCInstallDir)atlmfc\src\mfc;$(VCInstallDir)atlmfc\src\mfcm;$(VCInstallDir)atlmfc\src\atl;$(VCInstallDir)crt\src;</SourcePath>
+    <IncludePath>..\SFML-2.0\include;.\include;$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
