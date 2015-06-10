@@ -30,8 +30,11 @@ private:
 	sf::RectangleShape shopBG;
 	sf::Mouse mouse;
 	sf::Sprite basicTowerShop;
+	sf::Text livesText, moneyText;
 	bool placing;
 	Tower* placingTower;
+	int lives, money;
+
 public:
 	Game();
 	void updateGame();

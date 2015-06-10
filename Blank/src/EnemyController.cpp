@@ -34,6 +34,11 @@ EnemyController::EnemyController(FileLoader* assets)
 	}
 
 	waveSize = waves.at(wave).getWaveSize();
+
+	wavesText.setFont(assets->aller);
+	wavesText.setPosition(30, 610);
+	wavesText.setCharacterSize(20);
+	wavesText.setString("Waves: " + std::to_string(wave) + "/" + std::to_string(waves.size()));
 }
 
 void EnemyController::updateEnemies()
@@ -72,12 +77,15 @@ void EnemyController::draw(sf::RenderTarget& target, sf::RenderStates states) co
 	{
 		target.draw(enemies.at(i));
 	}
+
+	target.draw(wavesText);
 }
 
 void EnemyController::startWave()
 {
 	waveStarted = true;
 	enemyTimer.restart();
+	wavesText.setString("Waves: " + std::to_string(wave+1) + "/" + std::to_string(waves.size()));
 }
 
 std::vector<Enemy>* EnemyController::getEnemies()

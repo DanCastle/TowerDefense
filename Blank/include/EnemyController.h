@@ -15,6 +15,7 @@ private:
 	int waveSize;
 	int wave;
 	sf::Clock enemyTimer;
+	sf::Text wavesText;
 	int enemyDelay; //ms
 	FileLoader* assets;
 	bool waveStarted;

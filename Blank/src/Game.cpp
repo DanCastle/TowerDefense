@@ -15,6 +15,22 @@ Game::Game()
 	EnemyController newController(&assets);
 	enemyController = newController;
 
+	lives = 20;
+	money = 100;
+
+	livesText.setFont(assets.aller);
+	livesText.setPosition(30, 640);
+	livesText.setCharacterSize(20); //Magic Number?
+	livesText.setString("Lives: " + std::to_string(lives));
+
+	moneyText.setFont(assets.aller);
+	moneyText.setPosition(30, 580);
+	moneyText.setCharacterSize(20); //Magic Number?
+	moneyText.setString("Money: " + std::to_string(money));
+
+
+
+
 }
 
 void Game::updateGame()
@@ -44,6 +60,8 @@ void Game::updateGame()
 
 	window.draw(userInterface);
 	window.draw(enemyController);
+	window.draw(livesText);
+	window.draw(moneyText);
 	window.display();
 }
 
