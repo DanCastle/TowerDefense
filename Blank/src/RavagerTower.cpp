@@ -11,8 +11,8 @@ RavagerTower::RavagerTower(FileLoader* assets)
 	rateOfFire = 1.5;
 	range = 100;
 	bulletSpeed = 14;
-	sprite.setTexture(assets->towerTextures.at(1));
-	sprite.setOrigin(assets->towerTextures.at(1).getSize().x/2,assets->towerTextures.at(1).getSize().y/2);
+	sprite.setTexture(assets->buttonTextures.at(1));
+	sprite.setOrigin(assets->buttonTextures.at(1).getSize().x/2,assets->buttonTextures.at(1).getSize().y/2);
 	sprite.setPosition(300,300);
 }
 

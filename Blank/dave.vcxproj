@@ -25,6 +25,7 @@
     <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\SynTower.h" />
     <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\Tower.h" />
     <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\UI.h" />
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\Wave.h" />
     <ClInclude Include="include\Background.h" />
     <ClInclude Include="include\Collisions.h" />
     <ClInclude Include="include\vector2D.h" />
@@ -44,6 +45,7 @@
     <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\SynTower.cpp" />
     <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\Tower.cpp" />
     <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\UI.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\Wave.cpp" />
     <ClCompile Include="src\Background.cpp" />
     <ClCompile Include="src\Collisions.cpp" />
     <ClCompile Include="src\main.cpp" />

@@ -9,22 +9,25 @@ FileLoader::FileLoader()
 	sf::Texture tex;
 
 	tex.loadFromFile(".\\assets\\graphics\\comTower.png");
-	towerTextures.push_back(tex);
+	buttonTextures.push_back(tex);
 	
 	tex.loadFromFile(".\\assets\\graphics\\ravTower.png");
-	towerTextures.push_back(tex);
+	buttonTextures.push_back(tex);
 
 	tex.loadFromFile(".\\assets\\graphics\\synTower.png");
-	towerTextures.push_back(tex);
+	buttonTextures.push_back(tex);
 
 	tex.loadFromFile(".\\assets\\graphics\\sabTower.png");
-	towerTextures.push_back(tex);
+	buttonTextures.push_back(tex);
 
 	tex.loadFromFile(".\\assets\\graphics\\senTower.png");
-	towerTextures.push_back(tex);
+	buttonTextures.push_back(tex);
 
 	tex.loadFromFile(".\\assets\\graphics\\superTower.png");
-	towerTextures.push_back(tex);
+	buttonTextures.push_back(tex);
+
+	tex.loadFromFile(".\\assets\\graphics\\buttonBG.png");  //buttonBack
+	buttonTextures.push_back(tex);
 
 	std::string hoverText;
 
@@ -44,6 +47,9 @@ FileLoader::FileLoader()
 	shopButtonHoverText.push_back(hoverText);
 
 	hoverText = "Super Tower\n???\n1000 Credits";
+	shopButtonHoverText.push_back(hoverText);
+
+	hoverText = "";
 	shopButtonHoverText.push_back(hoverText);
 
 	sf::Texture enemySprite;

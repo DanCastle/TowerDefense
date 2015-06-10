@@ -11,8 +11,8 @@ SynTower::SynTower(FileLoader* assets)
 	rateOfFire = 1;
 	range = 60;
 	bulletSpeed = 1;
-	sprite.setTexture(assets->towerTextures.at(2));
-	sprite.setOrigin(assets->towerTextures.at(2).getSize().x/2,assets->towerTextures.at(2).getSize().y/2);
+	sprite.setTexture(assets->buttonTextures.at(2));
+	sprite.setOrigin(assets->buttonTextures.at(2).getSize().x/2,assets->buttonTextures.at(2).getSize().y/2);
 	sprite.setPosition(300,300);
 }
 

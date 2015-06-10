@@ -11,8 +11,8 @@ SenTower::SenTower(FileLoader* assets)
 	rateOfFire = 1;
 	range = 60;
 	bulletSpeed = 14;
-	sprite.setTexture(assets->towerTextures.at(4));
-	sprite.setOrigin(assets->towerTextures.at(4).getSize().x/2,assets->towerTextures.at(4).getSize().y/2);
+	sprite.setTexture(assets->buttonTextures.at(4));
+	sprite.setOrigin(assets->buttonTextures.at(4).getSize().x/2,assets->buttonTextures.at(4).getSize().y/2);
 	sprite.setPosition(300,300);
 }
 

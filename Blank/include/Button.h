@@ -14,7 +14,7 @@ private:
 	int minX, maxX, minY, maxY;
 	bool isHover;
 public:
-	Button(FileLoader* assets, int tower, int x, int y);
+	Button(FileLoader* assets, int buttonNo, int x, int y);
 	void setTexture(sf::Texture tex);
 	sf::Texture getTexture();
 	void hover();

@@ -11,8 +11,8 @@ SabTower::SabTower(FileLoader* assets)
 	rateOfFire = 0.5;
 	range = 100;
 	bulletSpeed = 25;
-	sprite.setTexture(assets->towerTextures.at(3));
-	sprite.setOrigin(assets->towerTextures.at(3).getSize().x/2,assets->towerTextures.at(3).getSize().y/2);
+	sprite.setTexture(assets->buttonTextures.at(3));
+	sprite.setOrigin(assets->buttonTextures.at(3).getSize().x/2,assets->buttonTextures.at(3).getSize().y/2);
 	sprite.setPosition(300,300);
 }
 

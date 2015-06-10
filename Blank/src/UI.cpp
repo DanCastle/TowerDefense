@@ -10,44 +10,50 @@ UI::UI(sf::RenderWindow* window, FileLoader* assets)
 	windowPointer = window;
 
 	//Do a for loop to create buttons, hold textures in an array within assets
-	newShopButton(0, assets, 30, 100);
-	newShopButton(1, assets, 75, 100);
-	newShopButton(2, assets, 120, 100);
-	newShopButton(3, assets, 30, 145);
-	newShopButton(4, assets, 75, 145);
-	newShopButton(5, assets, 120, 145);
+	newButton(0, assets, 30, 100);
+	newButton(1, assets, 75, 100);
+	newButton(2, assets, 120, 100);
+	newButton(3, assets, 30, 145);
+	newButton(4, assets, 75, 145);
+	newButton(5, assets, 120, 145);
+	newButton(6, assets, 30, 675);
 
 	towersTitle.setFont(assets->aller);
 	towersTitle.setPosition(30,50);
 	towersTitle.setString("Towers");
+
+	nextWave.setFont(assets->aller);
+	nextWave.setString("Send Wave");
+	textOnButton(&nextWave, buttons.at(6));
 }
 
 void UI::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-	for (int i = 0; i < shopButtons.size(); i++)
+	for (int i = 0; i < buttons.size(); i++)
 	{
-		target.draw(shopButtons.at(i));
+		target.draw(buttons.at(i));
 	}
 	target.draw(towersTitle);
+	target.draw(nextWave);
 }
-void UI::newShopButton(int buttonNo, FileLoader* assets, int x, int y)
+void UI::newButton(int buttonNo, FileLoader* assets, int x, int y)
 {
 	Button newButton(assets, buttonNo, x, y);
-	shopButtons.push_back(newButton);
+	buttons.push_back(newButton);
 }
 
 void UI::update()
 {
-	for (int i = 0; i < shopButtons.size(); i++)
+	for (int i = 0; i < buttons.size(); i++)
 	{
-		if (mouseOver(&shopButtons.at(i)))
+		if (mouseOver(&buttons.at(i)))
 		{
-			shopButtons.at(i).hover();
+			buttons.at(i).hover();
 		}
 
-		if (!mouseOver(&shopButtons.at(i)))
+		if (!mouseOver(&buttons.at(i)))
 		{
-			shopButtons.at(i).deHover();
+			buttons.at(i).deHover();
 		}
 	}
 }
@@ -76,7 +82,18 @@ bool UI::rightClicked()
 	else return false;
 }
 
-std::vector<Button>* UI::getShopButtons()
+std::vector<Button>* UI::getButtons()
 {
-	return &shopButtons;
+	return &buttons;
+}
+
+void UI::textOnButton(sf::Text* text, Button button)
+{
+	text->setCharacterSize((float)(button.getMaxY() - button.getMinY()) * 0.5);
+
+	sf::Vector2f origin(text->getLocalBounds().width/2,text->getLocalBounds().height/2);
+	text->setOrigin(origin);
+
+	sf::Vector2f buttonCenter((button.getMaxX() - button.getMinX())/2 + button.getMinX(), (button.getMaxY() - button.getMinY())/2 + button.getMinY());
+	text->setPosition(buttonCenter);
 }

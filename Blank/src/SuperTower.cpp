@@ -11,8 +11,8 @@ SuperTower::SuperTower(FileLoader* assets)
 	rateOfFire = 2;
 	range = 250;
 	bulletSpeed = 20;
-	sprite.setTexture(assets->towerTextures.at(5));
-	sprite.setOrigin(assets->towerTextures.at(5).getSize().x/2,assets->towerTextures.at(5).getSize().y/2);
+	sprite.setTexture(assets->buttonTextures.at(5));
+	sprite.setOrigin(assets->buttonTextures.at(5).getSize().x/2,assets->buttonTextures.at(5).getSize().y/2);
 	sprite.setPosition(300,300);
 }
 

@@ -1,8 +1,8 @@
 #include "Button.h"
 
-Button::Button(FileLoader* assets, int tower, int x, int y)
+Button::Button(FileLoader* assets, int buttonNo, int x, int y)
 {
-	sprite.setTexture(assets->towerTextures.at(tower));
+	sprite.setTexture(assets->buttonTextures.at(buttonNo));
 	sprite.setPosition(x,y);
 
 	minX = sprite.getGlobalBounds().left;
@@ -13,8 +13,7 @@ Button::Button(FileLoader* assets, int tower, int x, int y)
 
 
 	isHover = false;
-
-	text = assets->shopButtonHoverText.at(tower);
+	text = assets->shopButtonHoverText.at(buttonNo);
 
 	hoverText.setColor(sf::Color::White);
 	hoverText.setFont(assets->aller);

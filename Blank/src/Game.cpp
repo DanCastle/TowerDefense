@@ -94,21 +94,22 @@ void Game::updateTowers()
 
 void Game::handleClicks()
 {
-	std::vector<Button>* buttons = userInterface.getShopButtons();
+	std::vector<Button>* buttons = userInterface.getButtons();
 
 	for (int i = 0; i < buttons->size(); i++)
 	{
 		if (placing == false && userInterface.clicked(&buttons->at(i)))
 		{
-			placing = true;
+			
 			switch(i) 
 			{
-			case 0: newBasicTower(); break;
-			case 1: newRavagerTower(); break;
-			case 2: newSynTower(); break;
-			case 3: newSabTower(); break;
-			case 4: newSenTower(); break;
-			case 5: newSuperTower(); break;
+			case 0: newBasicTower(); placing = true; break;
+			case 1: newRavagerTower(); placing = true; break;
+			case 2: newSynTower(); placing = true; break;
+			case 3: newSabTower(); placing = true; break;
+			case 4: newSenTower(); placing = true; break;
+			case 5: newSuperTower(); placing = true; break;
+			case 6: enemyController.startWave(); break;
 			}
 		}
 

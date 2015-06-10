@@ -9,8 +9,12 @@ EnemyController::EnemyController(FileLoader* assets)
 {
 	this->assets = assets;
 
-	waveSize = 20;
+	//waveSize = 20;
+	wave = 0;
 	enemyDelay = 1000;
+
+	waveStarted = false;
+
 	path.push_back(sf::Vector2f(950,10));
 	path.push_back(sf::Vector2f(950,140));
 	path.push_back(sf::Vector2f(250,140));
@@ -23,11 +27,18 @@ EnemyController::EnemyController(FileLoader* assets)
 	path.push_back(sf::Vector2f(650,450));
 	path.push_back(sf::Vector2f(250,450));
 	path.push_back(sf::Vector2f(250,758));
+
+	for (int i = 0; i < 10; i++)
+	{
+		waves.push_back(Wave(5*(i+1)));
+	}
+
+	waveSize = waves.at(wave).getWaveSize();
 }
 
 void EnemyController::updateEnemies()
 {
-	if (enemyTimer.getElapsedTime().asMilliseconds() > enemyDelay && waveSize > 0 /* &&waveStarted == true */)
+	if (enemyTimer.getElapsedTime().asMilliseconds() > enemyDelay && waveSize > 0  && waveStarted == true )
 	{
 		Enemy newEnemy(&path, assets);
 		enemies.push_back(newEnemy);
@@ -35,7 +46,7 @@ void EnemyController::updateEnemies()
 		waveSize--;
 	}
 
-	//if (waveSize == 0) { wave++, waveStarted = false }
+	if (waveSize == 0) { wave++; waveSize = waves.at(wave).getWaveSize(); waveStarted = false; }
 	//click button to send wave
 
 	for (int i = 0; i < enemies.size(); i++)
@@ -61,6 +72,12 @@ void EnemyController::draw(sf::RenderTarget& target, sf::RenderStates states) co
 	{
 		target.draw(enemies.at(i));
 	}
+}
+
+void EnemyController::startWave()
+{
+	waveStarted = true;
+	enemyTimer.restart();
 }
 
 std::vector<Enemy>* EnemyController::getEnemies()

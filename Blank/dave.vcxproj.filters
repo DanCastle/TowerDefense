@@ -72,6 +72,9 @@
     <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\SuperTower.h">
       <Filter>Header Files\Towers</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\Wave.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Background.cpp">
@@ -127,6 +130,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\SuperTower.cpp">
       <Filter>Source Files\Towers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\Wave.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

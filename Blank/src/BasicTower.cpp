@@ -11,8 +11,8 @@ BasicTower::BasicTower(FileLoader* assets)
 	rateOfFire = 1;
 	range = 125;
 	bulletSpeed = 14;
-	sprite.setTexture(assets->towerTextures.at(0));
-	sprite.setOrigin(assets->towerTextures.at(0).getSize().x/2,assets->towerTextures.at(0).getSize().y/2);
+	sprite.setTexture(assets->buttonTextures.at(0));
+	sprite.setOrigin(assets->buttonTextures.at(0).getSize().x/2,assets->buttonTextures.at(0).getSize().y/2);
 	sprite.setPosition(300,300);
 }
 
