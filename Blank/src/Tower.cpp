@@ -60,6 +60,11 @@ int Tower::getRange()
 	return range;
 }
 
+int Tower::getCost()
+{
+	return cost;
+}
+
 float Tower::getRoF()
 {
 	return rateOfFire;

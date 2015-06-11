@@ -12,10 +12,11 @@ private:
 	float speed;
 	float radius;
 	int targetNode;
+	int loot;
+	bool escaped;
 	sf::Sprite sprite;
 	sf::Vector2f velocity;
 	sf::Vector2f position;
-	//sf::CircleShape sprite;
 	sf::RectangleShape healthBar;
 	std::vector<sf::Vector2f>* path;
 public:
@@ -24,8 +25,10 @@ public:
 	void update();
 	sf::Vector2f getPosition();
 	int getRadius();
+	int getLoot();
 	void moveTo(sf::Vector2f target);
 	bool isDead(int dmg);
+	bool hasEscaped();
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };
 

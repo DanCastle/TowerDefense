@@ -12,24 +12,14 @@ Game::Game()
 	UI newInterface(&window, &assets);
 	userInterface = newInterface;
 
-	EnemyController newController(&assets);
+	Player newPlayer(&assets);
+	player = newPlayer;
+
+	EnemyController newController(&assets, &player);
 	enemyController = newController;
 
 	lives = 20;
 	money = 100;
-
-	livesText.setFont(assets.aller);
-	livesText.setPosition(30, 640);
-	livesText.setCharacterSize(20); //Magic Number?
-	livesText.setString("Lives: " + std::to_string(lives));
-
-	moneyText.setFont(assets.aller);
-	moneyText.setPosition(30, 580);
-	moneyText.setCharacterSize(20); //Magic Number?
-	moneyText.setString("Money: " + std::to_string(money));
-
-
-
 
 }
 
@@ -60,8 +50,7 @@ void Game::updateGame()
 
 	window.draw(userInterface);
 	window.draw(enemyController);
-	window.draw(livesText);
-	window.draw(moneyText);
+	window.draw(player);
 	window.display();
 }
 
@@ -90,6 +79,7 @@ void Game::updateTowers()
 					i--;
 					if (enemies->at(j).isDead(tempBullet.getDamage()))
 					{
+						player.gainMoney(enemies->at(j).getLoot());
 						enemies->erase(enemies->begin()+j);
 					}
 					j = enemies->size();
@@ -121,12 +111,12 @@ void Game::handleClicks()
 			
 			switch(i) 
 			{
-			case 0: newBasicTower(); placing = true; break;
-			case 1: newRavagerTower(); placing = true; break;
-			case 2: newSynTower(); placing = true; break;
-			case 3: newSabTower(); placing = true; break;
-			case 4: newSenTower(); placing = true; break;
-			case 5: newSuperTower(); placing = true; break;
+			case 0: newBasicTower(); break;
+			case 1: newRavagerTower(); break;
+			case 2: newSynTower(); break;
+			case 3: newSabTower(); break;
+			case 4: newSenTower(); break;
+			case 5: newSuperTower(); break;
 			case 6: enemyController.startWave(); break;
 			}
 		}
@@ -172,8 +162,16 @@ void Game::shootTowers()
 void Game::newBasicTower()
 {
 	BasicTower newTower(&assets);
-	//basicTowers.push_back(new BasicTower(&assets));
-	//activeTowers.push_back(&basicTowers.at(basicTowers.size() -1));
+
+	if (player.getMoney() - newTower.getCost() >= 0)
+	{
+		player.spendMoney(newTower.getCost());
+		placing = true;
+	}
+
+	else return;
+	
+
 	activeTowers.push_back(new BasicTower(&assets));
 	placingTower = activeTowers.at(activeTowers.size() -1);
 
@@ -184,8 +182,15 @@ void Game::newBasicTower()
 void Game::newRavagerTower()
 {
 	RavagerTower newTower(&assets);
-	//ravagerTowers.push_back(newTower);
-	//activeTowers.push_back(&ravagerTowers.at(ravagerTowers.size() -1));
+
+	if (player.getMoney() - newTower.getCost() >= 0)
+	{
+		player.spendMoney(newTower.getCost());
+		placing = true;
+	}
+
+	else return;
+
 	activeTowers.push_back(new RavagerTower(&assets));
 	placingTower = activeTowers.at(activeTowers.size() -1);
 }
@@ -193,8 +198,15 @@ void Game::newRavagerTower()
 void Game::newSynTower()
 {
 	SynTower newTower(&assets);
-	//synTowers.push_back(newTower);
-	//activeTowers.push_back(&synTowers.at(synTowers.size() -1));
+
+	if (player.getMoney() - newTower.getCost() >= 0)
+	{
+		player.spendMoney(newTower.getCost());
+		placing = true;
+	}
+
+	else return;
+
 	activeTowers.push_back(new SynTower(&assets));
 	placingTower = activeTowers.at(activeTowers.size() -1);
 }
@@ -202,8 +214,15 @@ void Game::newSynTower()
 void Game::newSabTower()
 {
 	SabTower newTower(&assets);
-	//sabTowers.push_back(newTower);
-	//activeTowers.push_back(&sabTowers.at(sabTowers.size() -1));
+
+	if (player.getMoney() - newTower.getCost() >= 0)
+	{
+		player.spendMoney(newTower.getCost());
+		placing = true;
+	}
+
+	else return;
+
 	activeTowers.push_back(new SabTower(&assets));
 	placingTower = activeTowers.at(activeTowers.size() -1);
 }
@@ -211,8 +230,15 @@ void Game::newSabTower()
 void Game::newSenTower()
 {
 	SenTower newTower(&assets);
-	//senTowers.push_back(newTower);
-	//activeTowers.push_back(&senTowers.at(senTowers.size() -1));
+
+	if (player.getMoney() - newTower.getCost() >= 0)
+	{
+		player.spendMoney(newTower.getCost());
+		placing = true;
+	}
+
+	else return;
+
 	activeTowers.push_back(new SenTower(&assets));
 	placingTower = activeTowers.at(activeTowers.size() -1);
 }
@@ -220,8 +246,15 @@ void Game::newSenTower()
 void Game::newSuperTower()
 {
 	SuperTower newTower(&assets);
-	//superTowers.push_back(newTower);
-	//activeTowers.push_back(&superTowers.at(superTowers.size() -1));
+
+	if (player.getMoney() - newTower.getCost() >= 0)
+	{
+		player.spendMoney(newTower.getCost());
+		placing = true;
+	}
+
+	else return;
+
 	activeTowers.push_back(new SuperTower(&assets));
 	placingTower = activeTowers.at(activeTowers.size() -1);
 }

@@ -6,9 +6,7 @@ Enemy::Enemy()
 	position = sf::Vector2f(0,0);
 	velocity = sf::Vector2f(0,0);
 	radius = 10;
-	/*sprite.setRadius(radius);
-	sprite.setOrigin(radius, radius);
-	sprite.setFillColor(sf::Color::White);*/
+	escaped = false;
 
 	healthBar.setFillColor(sf::Color::Red);
 	healthBar.setOutlineThickness(1);
@@ -23,10 +21,13 @@ Enemy::Enemy(std::vector<sf::Vector2f>* path, FileLoader* assets)
 
 	startHealth = 100;
 	health = 100;
+	loot = 10;
 
 	speed = 3; //magicnumber!
 	position = path->at(0);
 	moveTo(path->at(1));
+
+	escaped = false;
 	
 	sprite.setTexture(assets->enemySprites.at(0));
 	radius = sprite.getLocalBounds().width/2;
@@ -58,9 +59,8 @@ void Enemy::update()
 
 		else
 		{
-			position = path->at(0);
-			moveTo(path->at(1));
-			targetNode = 1;
+			escaped = true;
+			velocity = sf::Vector2f(0,0);
 		}
 	}
 
@@ -78,6 +78,11 @@ sf::Vector2f Enemy::getPosition()
 int Enemy::getRadius()
 {
 	return radius;
+}
+
+int Enemy::getLoot()
+{
+	return loot;
 }
 
 void Enemy::moveTo(sf::Vector2f target)
@@ -98,6 +103,11 @@ bool Enemy::isDead(int dmg)
 	health -= dmg;
 	if (health <= 0) return true;
 	else return false;
+}
+
+bool Enemy::hasEscaped()
+{
+	return escaped;
 }
 
 void Enemy::draw(sf::RenderTarget& target, sf::RenderStates states) const

@@ -23,6 +23,7 @@ public:
 	sf::Vector2f getPosition();
 	sf::Time getTimer();
 	int getRange();
+	int getCost();
 	float getRoF();
 	bool getCanShoot();
 	bool outOfRange(Bullet* bullet);

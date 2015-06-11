@@ -5,9 +5,11 @@ EnemyController::EnemyController()
 
 }
 
-EnemyController::EnemyController(FileLoader* assets)
+EnemyController::EnemyController(FileLoader* assets, Player* player)
 {
 	this->assets = assets;
+
+	this->player = player;
 
 	//waveSize = 20;
 	wave = 0;
@@ -53,6 +55,16 @@ void EnemyController::updateEnemies()
 
 	if (waveSize == 0) { wave++; waveSize = waves.at(wave).getWaveSize(); waveStarted = false; }
 	//click button to send wave
+
+	for (int i = 0; i < enemies.size(); i++)
+	{
+		if (enemies.at(i).hasEscaped())
+		{
+			player->takeDamage(1);
+			enemies.erase(enemies.begin() + i);
+			i--;
+		}
+	}
 
 	for (int i = 0; i < enemies.size(); i++)
 	{

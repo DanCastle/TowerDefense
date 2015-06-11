@@ -6,7 +6,7 @@
 
 BasicTower::BasicTower(FileLoader* assets)
 {
-	cost = 10;
+	cost = 50;
 	damage = 50;
 	rateOfFire = 1;
 	range = 125;

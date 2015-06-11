@@ -1,18 +1,74 @@
-﻿Build started 10/06/2015 23:20:20.
+﻿Build started 11/06/2015 15:41:59.
      1>Project "C:\Users\Dan's PC\Desktop\Portfolio\Games\TowerDefense\Blank\dave.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt "..\..\..\..\..\..\Dan's PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\Game.cpp" src\main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt "..\..\..\..\..\..\Dan's PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\BasicTower.cpp" "..\..\..\..\..\..\Dan's PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\Enemy.cpp" "..\..\..\..\..\..\Dan's PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\EnemyController.cpp" "..\..\..\..\..\..\Dan's PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\Game.cpp" "..\..\..\..\..\..\Dan's PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\Player.cpp" "..\..\..\..\..\..\Dan's PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\RavagerTower.cpp" "..\..\..\..\..\..\Dan's PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\SabTower.cpp" "..\..\..\..\..\..\Dan's PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\SenTower.cpp" "..\..\..\..\..\..\Dan's PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\SuperTower.cpp" "..\..\..\..\..\..\Dan's PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\SynTower.cpp" "..\..\..\..\..\..\Dan's PC\Desktop\Portfolio\Games\TowerDefense\Blank\src\Tower.cpp" src\main.cpp
+         Player.cpp
          Game.cpp
-     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\game.cpp(70): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\game.cpp(80): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\game.cpp(84): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\game.cpp(117): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\game.cpp(145): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\game.cpp(148): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\game.cpp(298): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\game.cpp(59): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\game.cpp(69): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\game.cpp(73): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\game.cpp(107): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\game.cpp(135): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\game.cpp(138): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\game.cpp(331): warning C4018: '<' : signed/unsigned mismatch
+         Enemy.cpp
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\enemy.cpp(54): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\enemy.cpp(80): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\enemy.cpp(95): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\enemy.cpp(96): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\enemy.cpp(98): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
          Generating Code...
          Compiling...
          main.cpp
+         Tower.cpp
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\tower.cpp(22): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\tower.cpp(100): warning C4244: 'argument' : conversion from 'const int' to 'float', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\tower.cpp(102): warning C4244: 'argument' : conversion from 'const int' to 'float', possible loss of data
+         SynTower.cpp
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\syntower.cpp(15): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\syntower.cpp(26): warning C4244: 'argument' : conversion from 'const int' to 'float', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\syntower.cpp(28): warning C4244: 'argument' : conversion from 'const int' to 'float', possible loss of data
+         SuperTower.cpp
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\supertower.cpp(15): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\supertower.cpp(26): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\supertower.cpp(27): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\supertower.cpp(29): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\supertower.cpp(39): warning C4244: 'argument' : conversion from 'const int' to 'float', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\supertower.cpp(41): warning C4244: 'argument' : conversion from 'const int' to 'float', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\supertower.cpp(46): warning C4018: '<' : signed/unsigned mismatch
+         SenTower.cpp
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\sentower.cpp(15): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\sentower.cpp(26): warning C4244: 'argument' : conversion from 'const int' to 'float', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\sentower.cpp(28): warning C4244: 'argument' : conversion from 'const int' to 'float', possible loss of data
+         SabTower.cpp
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\sabtower.cpp(15): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\sabtower.cpp(26): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\sabtower.cpp(27): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\sabtower.cpp(29): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\sabtower.cpp(40): warning C4244: 'argument' : conversion from 'const int' to 'float', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\sabtower.cpp(42): warning C4244: 'argument' : conversion from 'const int' to 'float', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\sabtower.cpp(47): warning C4018: '<' : signed/unsigned mismatch
+         RavagerTower.cpp
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\ravagertower.cpp(15): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\ravagertower.cpp(26): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\ravagertower.cpp(27): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\ravagertower.cpp(29): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\ravagertower.cpp(39): warning C4244: 'argument' : conversion from 'const int' to 'float', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\ravagertower.cpp(41): warning C4244: 'argument' : conversion from 'const int' to 'float', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\ravagertower.cpp(46): warning C4018: '<' : signed/unsigned mismatch
+         EnemyController.cpp
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\enemycontroller.cpp(59): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\enemycontroller.cpp(69): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\enemycontroller.cpp(77): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\enemycontroller.cpp(88): warning C4018: '<' : signed/unsigned mismatch
+         BasicTower.cpp
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\basictower.cpp(15): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\basictower.cpp(26): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\basictower.cpp(27): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\basictower.cpp(29): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\basictower.cpp(39): warning C4244: 'argument' : conversion from 'const int' to 'float', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\basictower.cpp(41): warning C4244: 'argument' : conversion from 'const int' to 'float', possible loss of data
+     1>c:\users\dan's pc\desktop\portfolio\games\towerdefense\blank\src\basictower.cpp(46): warning C4018: '<' : signed/unsigned mismatch
          Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Dan's PC\Desktop\Portfolio\Games\TowerDefense\Blank\Debug\dave.exe" /INCREMENTAL /NOLOGO "sfml-graphics-d.lib" "sfml-window-d.lib" "sfml-system-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Dan's PC\Desktop\Portfolio\Games\TowerDefense\Blank\Debug\dave.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Dan's PC\Desktop\Portfolio\Games\TowerDefense\Blank\Debug\dave.lib" /MACHINE:X86 Debug\BasicTower.obj
@@ -22,6 +78,7 @@
          Debug\EnemyController.obj
          Debug\FileLoader.obj
          Debug\Game.obj
+         Debug\Player.obj
          Debug\RavagerTower.obj
          Debug\SabTower.obj
          Debug\SenTower.obj
@@ -39,4 +96,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.24
+Time Elapsed 00:00:21.79

@@ -14,6 +14,7 @@
 #include "UI.h"
 #include "Enemy.h"
 #include "Bullet.h"
+#include "Player.h"
 #include <iostream>
 #include <cmath>
 
@@ -26,11 +27,11 @@ private:
 	FileLoader assets;
 	EnemyController enemyController;
 	UI userInterface;
+	Player player;
 	sf::RenderWindow window;
 	sf::RectangleShape shopBG;
 	sf::Mouse mouse;
 	sf::Sprite basicTowerShop;
-	sf::Text livesText, moneyText;
 	bool placing;
 	Tower* placingTower;
 	int lives, money;
