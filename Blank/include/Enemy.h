@@ -14,6 +14,7 @@ private:
 	int targetNode;
 	int loot;
 	bool escaped;
+	bool armoured;
 	sf::Sprite sprite;
 	sf::Vector2f velocity;
 	sf::Vector2f position;
@@ -21,7 +22,7 @@ private:
 	std::vector<sf::Vector2f>* path;
 public:
 	Enemy();
-	Enemy(std::vector<sf::Vector2f>* path, FileLoader* assets);
+	Enemy(std::vector<sf::Vector2f>* path, FileLoader* assets, bool armour);
 	void update();
 	sf::Vector2f getPosition();
 	int getRadius();
@@ -29,6 +30,7 @@ public:
 	void moveTo(sf::Vector2f target);
 	bool isDead(int dmg);
 	bool hasEscaped();
+	bool isArmoured();
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };
 

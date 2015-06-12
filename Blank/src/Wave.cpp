@@ -2,12 +2,26 @@
 
 Wave::Wave()
 {
-	waveSize = 0;
+	basic = 0;
+	armoured = 0;
 }
 
-Wave::Wave(int waveSize)
+Wave::Wave(int basic, int armoured)
 {
-	this->waveSize = waveSize;
+	this->basic = basic;
+	this->armoured = armoured;
+
+	waveSize = basic + armoured;
+}
+
+int Wave::getBasic()
+{
+	return basic;
+}
+
+int Wave::getArmoured()
+{
+	return armoured;
 }
 
 int Wave::getWaveSize()

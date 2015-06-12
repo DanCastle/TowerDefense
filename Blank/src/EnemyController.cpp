@@ -32,10 +32,13 @@ EnemyController::EnemyController(FileLoader* assets, Player* player)
 
 	for (int i = 0; i < 10; i++)
 	{
-		waves.push_back(Wave(5*(i+1)));
+		waves.push_back(Wave(5*(i+1) , 5));
 	}
 
+	basic = waves.at(wave).getBasic();
+	armoured = waves.at(wave).getBasic();
 	waveSize = waves.at(wave).getWaveSize();
+
 
 	wavesText.setFont(assets->aller);
 	wavesText.setPosition(30, 610);
@@ -43,17 +46,40 @@ EnemyController::EnemyController(FileLoader* assets, Player* player)
 	wavesText.setString("Waves: " + std::to_string(wave) + "/" + std::to_string(waves.size()));
 }
 
-void EnemyController::updateEnemies()
+void EnemyController::spawnEnemies()
 {
+
 	if (enemyTimer.getElapsedTime().asMilliseconds() > enemyDelay && waveSize > 0  && waveStarted == true )
 	{
-		Enemy newEnemy(&path, assets);
-		enemies.push_back(newEnemy);
+		if (basic > 0){
+			Enemy newEnemy(&path, assets, false);
+			enemies.push_back(newEnemy);
+			basic--;
+		}
+
+		else if (armoured > 0){
+			Enemy newEnemy(&path, assets, true);
+			enemies.push_back(newEnemy);
+			armoured--;
+		}
+
 		enemyTimer.restart();
 		waveSize--;
 	}
 
-	if (waveSize == 0) { wave++; waveSize = waves.at(wave).getWaveSize(); waveStarted = false; }
+}
+
+void EnemyController::updateEnemies()
+{
+	spawnEnemies();
+
+	if (waveSize == 0) { 
+		wave++; 
+		basic = waves.at(wave).getBasic();
+		armoured = waves.at(wave).getArmoured();
+		waveSize = waves.at(wave).getWaveSize(); 
+		waveStarted = false; 
+	}
 	//click button to send wave
 
 	for (int i = 0; i < enemies.size(); i++)
@@ -62,7 +88,7 @@ void EnemyController::updateEnemies()
 		{
 			player->takeDamage(1);
 			enemies.erase(enemies.begin() + i);
-			i--;
+
 		}
 	}
 

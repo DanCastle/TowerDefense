@@ -13,7 +13,7 @@ private:
 	std::vector<Enemy> enemies;
 	std::vector<Wave> waves;
 	std::vector<sf::Vector2f>path;
-	int waveSize;
+	int basic, armoured, waveSize;
 	int wave;
 	sf::Clock enemyTimer;
 	sf::Text wavesText;
@@ -24,6 +24,7 @@ private:
 public:
 	EnemyController();
 	EnemyController(FileLoader* assets, Player* player);
+	void spawnEnemies();
 	void updateEnemies();
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 	void startWave();

@@ -26,7 +26,7 @@ void BasicTower::shoot(Enemy* target)
 	int x = bulletSpeed*cosf(radians);
 	int y = bulletSpeed*sinf(radians);
 
-	Bullet newBullet(position, sf::Vector2f(x,y), damage);
+	Bullet newBullet(position, sf::Vector2f(x,y), damage, false);
 
 	bullets.push_back(newBullet);
 

@@ -15,7 +15,7 @@ Enemy::Enemy()
 	healthBar.setSize(sf::Vector2f(radius, radius*2));
 }
 
-Enemy::Enemy(std::vector<sf::Vector2f>* path, FileLoader* assets)
+Enemy::Enemy(std::vector<sf::Vector2f>* path, FileLoader* assets, bool armour)
 {
 	this->path = path;
 
@@ -28,11 +28,13 @@ Enemy::Enemy(std::vector<sf::Vector2f>* path, FileLoader* assets)
 	moveTo(path->at(1));
 
 	escaped = false;
+	armoured = armour;
 	
 	sprite.setTexture(assets->enemySprites.at(0));
 	radius = sprite.getLocalBounds().width/2;
 	//sprite.setRadius(radius);
 	sprite.setOrigin(radius,radius);
+	
 	//sprite.setFillColor(sf::Color::White);
 
 	targetNode = 1;
@@ -42,6 +44,12 @@ Enemy::Enemy(std::vector<sf::Vector2f>* path, FileLoader* assets)
 	healthBar.setOutlineColor(sf::Color::Black);
 	healthBar.setPosition(position.x, position.y - radius - 20);
 	healthBar.setSize(sf::Vector2f(radius*2, radius/2));
+
+	//Armour section
+	if (armoured == true)
+	{
+		sprite.setColor(sf::Color::Red);
+	}
 
 }
 
@@ -108,6 +116,11 @@ bool Enemy::isDead(int dmg)
 bool Enemy::hasEscaped()
 {
 	return escaped;
+}
+
+bool Enemy::isArmoured()
+{
+	return armoured;
 }
 
 void Enemy::draw(sf::RenderTarget& target, sf::RenderStates states) const

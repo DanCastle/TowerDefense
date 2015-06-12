@@ -10,12 +10,13 @@ Bullet::Bullet()
 	sprite.setFillColor(sf::Color::Black);
 }
 
-Bullet::Bullet(sf::Vector2f pos, sf::Vector2f vel, int dmg)
+Bullet::Bullet(sf::Vector2f pos, sf::Vector2f vel, int dmg, bool magic)
 {
 	position = pos;
 	velocity = vel;
 	radius = 6;
 	damage = dmg;
+	this->magic = magic;
 	sprite.setRadius(radius);
 	sprite.setOrigin(radius,radius);
 	sprite.setFillColor(sf::Color::Black);
@@ -45,6 +46,11 @@ void Bullet::update()
 {
 	position += velocity;
 	sprite.setPosition(position);
+}
+
+bool Bullet::isMagic()
+{
+	return magic;
 }
 
 void Bullet::draw(sf::RenderTarget& target, sf::RenderStates states) const

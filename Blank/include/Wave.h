@@ -4,10 +4,12 @@
 class Wave
 {
 private:
-	int waveSize;
+	int basic, armoured, waveSize;
 public:
 	Wave();
-	Wave(int waveSize);
+	Wave(int basic, int armoured);
+	int getBasic();
+	int getArmoured();
 	int getWaveSize();
 };
 

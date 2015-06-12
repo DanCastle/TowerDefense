@@ -32,16 +32,20 @@ private:
 	sf::RectangleShape shopBG;
 	sf::Mouse mouse;
 	sf::Sprite basicTowerShop;
+	std::vector<sf::Text> damageTexts;
 	bool placing;
 	Tower* placingTower;
 	int lives, money;
+	float armourPercent; //Perecent of damage resisted from regular bullets
 
 public:
 	Game();
 	void updateGame();
 	void updateTowers();
+	void updateDamageText();
 	void handleClicks();
 	void shootTowers();
+	void checkCollisions(int i); //i being the position in tower vector
 	void newBasicTower();
 	void newRavagerTower();
 	void newSynTower();
@@ -49,6 +53,7 @@ public:
 	void newSenTower();
 	void newSuperTower();
 	void drawTowers();
+	void newDamageText(sf::Vector2f pos, int dmg);
 	vector<Tower*> getActiveTowers();
 	bool collides(Bullet bullet, Enemy enemy);
 	bool mouseOver(Button* button);

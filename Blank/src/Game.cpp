@@ -21,6 +21,8 @@ Game::Game()
 	lives = 20;
 	money = 100;
 
+	armourPercent = 0.8;
+
 }
 
 void Game::updateGame()
@@ -44,6 +46,7 @@ void Game::updateGame()
 
 	updateTowers();
 	shootTowers();
+	updateDamageText();
 
 	drawTowers();
 	window.draw(shopBG);
@@ -51,6 +54,12 @@ void Game::updateGame()
 	window.draw(userInterface);
 	window.draw(enemyController);
 	window.draw(player);
+
+	for (int i = 0; i < damageTexts.size(); i++)
+	{
+		window.draw(damageTexts.at(i));
+	}
+
 	window.display();
 }
 
@@ -63,31 +72,7 @@ void Game::updateTowers()
 
 		activeTowers.at(i)->update();
 
-		std::vector<Bullet>* bullets = activeTowers.at(i)->getBullets();
-		std::vector<Enemy>* enemies = enemyController.getEnemies();
-
-		for (int i = 0; i < bullets->size(); i++)
-		{
-			Bullet tempBullet = bullets->at(i);
-
-			for (int j = 0; j < enemies->size(); j++)
-			{
-				Enemy tempEnemy = enemies->at(j);
-				if (collides(tempBullet, tempEnemy))
-				{
-					bullets->erase(bullets->begin()+i);
-					i--;
-					if (enemies->at(j).isDead(tempBullet.getDamage()))
-					{
-						player.gainMoney(enemies->at(j).getLoot());
-						enemies->erase(enemies->begin()+j);
-					}
-					j = enemies->size();
-					
-				}
-			}
-
-		}
+		checkCollisions(i);
 
 	}
 
@@ -98,6 +83,24 @@ void Game::updateTowers()
 		activeTowers.at(activeTowers.size()-1)->setPosition((sf::Vector2f)mouse.getPosition(window));
 	}
 
+}
+
+void Game::updateDamageText()
+{
+	for (int i = 0; i < damageTexts.size(); i++)
+	{
+		sf::Color c = damageTexts.at(i).getColor();
+		sf::Vector2f p = damageTexts.at(i).getPosition();
+
+		damageTexts.at(i).setColor(sf::Color(c.r,c.g,c.b,c.a -5));
+		damageTexts.at(i).setPosition(p.x, p.y -1);
+
+		if (damageTexts.at(i).getColor().a <= 0)
+		{
+			damageTexts.erase(damageTexts.begin() + i);
+			i--;
+		}
+	}
 }
 
 void Game::handleClicks()
@@ -157,6 +160,42 @@ void Game::shootTowers()
 	}
 	//if enemy is found in range, shoot() at it, set readyToFire to false
 	//start timer for rate of fire.
+}
+
+void Game::checkCollisions(int i)
+{
+	std::vector<Bullet>* bullets = activeTowers.at(i)->getBullets();
+	std::vector<Enemy>* enemies = enemyController.getEnemies();
+
+		for (int i = 0; i < bullets->size(); i++)
+		{
+			Bullet tempBullet = bullets->at(i);
+
+			for (int j = 0; j < enemies->size(); j++)
+			{
+				Enemy tempEnemy = enemies->at(j);
+				if (collides(tempBullet, tempEnemy))
+				{
+					bullets->erase(bullets->begin()+i);
+					i--;
+
+					float damage = tempBullet.getDamage();
+
+					if (tempEnemy.isArmoured() && !tempBullet.isMagic()) damage*=(1-armourPercent);
+
+					newDamageText(tempEnemy.getPosition(), damage);
+
+					if (enemies->at(j).isDead(damage)) //deal damage and check if fatal
+					{
+						player.gainMoney(enemies->at(j).getLoot());
+						enemies->erase(enemies->begin()+j);
+					}
+					j = enemies->size();
+					
+				}
+			}
+
+		}
 }
 
 void Game::newBasicTower()
@@ -257,6 +296,18 @@ void Game::newSuperTower()
 
 	activeTowers.push_back(new SuperTower(&assets));
 	placingTower = activeTowers.at(activeTowers.size() -1);
+}
+
+void Game::newDamageText(sf::Vector2f pos, int dmg)
+{
+	sf::Text newText;
+	newText.setCharacterSize(15);
+	newText.setFont(assets.aller);
+	newText.setString(std::to_string(dmg));
+	newText.setOrigin(newText.getLocalBounds().width/2, newText.getLocalBounds().height/2);
+	newText.setPosition(pos);
+
+	damageTexts.push_back(newText);
 }
 
 vector<Tower*> Game::getActiveTowers()
