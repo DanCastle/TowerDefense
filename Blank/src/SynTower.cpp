@@ -14,6 +14,10 @@ SynTower::SynTower(FileLoader* assets)
 	sprite.setTexture(assets->buttonTextures.at(2));
 	sprite.setOrigin(assets->buttonTextures.at(2).getSize().x/2,assets->buttonTextures.at(2).getSize().y/2);
 	sprite.setPosition(300,300);
+
+	rangeCircle.setRadius(range);
+	rangeCircle.setOrigin(range,range);
+	rangeCircle.setPosition(sprite.getPosition());
 }
 
 void SynTower::shoot(Enemy* target)
@@ -23,10 +27,6 @@ void SynTower::shoot(Enemy* target)
 
 void SynTower::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-	sf::CircleShape circle(range,30);
-	circle.setFillColor(sf::Color(255,255,255,100));
-	circle.setOrigin(range,range);
-	circle.setPosition(sprite.getPosition());
-	target.draw(circle);
+	if(selected) target.draw(rangeCircle);
 	target.draw(sprite);
 }

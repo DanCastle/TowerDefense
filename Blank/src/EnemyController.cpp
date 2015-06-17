@@ -52,13 +52,13 @@ void EnemyController::spawnEnemies()
 	if (enemyTimer.getElapsedTime().asMilliseconds() > enemyDelay && waveSize > 0  && waveStarted == true )
 	{
 		if (basic > 0){
-			Enemy newEnemy(&path, assets, false);
+			Enemy newEnemy(&path, assets, false, false, false);
 			enemies.push_back(newEnemy);
 			basic--;
 		}
 
 		else if (armoured > 0){
-			Enemy newEnemy(&path, assets, true);
+			Enemy newEnemy(&path, assets, true, false, false);
 			enemies.push_back(newEnemy);
 			armoured--;
 		}
@@ -73,7 +73,7 @@ void EnemyController::updateEnemies()
 {
 	spawnEnemies();
 
-	if (waveSize == 0) { 
+	if (waveSize == 0 && wave < waves.size() - 1 ) { 
 		wave++; 
 		basic = waves.at(wave).getBasic();
 		armoured = waves.at(wave).getArmoured();

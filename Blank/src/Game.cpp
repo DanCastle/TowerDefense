@@ -78,9 +78,26 @@ void Game::updateTowers()
 
 	if (placing == true)
 	{
-		//basicTowers.at(basicTowers.size()-1).setPosition((sf::Vector2f)mouse.getPosition(window));
-		//placingTower->setPosition((sf::Vector2f)mouse.getPosition(window));
-		activeTowers.at(activeTowers.size()-1)->setPosition((sf::Vector2f)mouse.getPosition(window));
+		
+		Tower* placingTower = activeTowers.at(activeTowers.size()-1);
+
+		placingTower->setPlaceable(true);
+		selectTower(placingTower);
+
+		for (int i = 0; i < activeTowers.size()-1; i++)
+		{
+			sf::Vector2f delta = activeTowers.at(i)->getPosition() - placingTower->getPosition();
+
+			float distance = sqrtf(pow(delta.x,2) + pow(delta.y,2));
+
+			if (distance <= placingTower->getPlacementRadius())
+			{
+				placingTower->setPlaceable(false);
+			}
+
+		}
+
+		placingTower->setPosition((sf::Vector2f)mouse.getPosition(window));
 	}
 
 }
@@ -107,29 +124,52 @@ void Game::handleClicks()
 {
 	std::vector<Button>* buttons = userInterface.getButtons();
 
-	for (int i = 0; i < buttons->size(); i++)
+	if (userInterface.clicked())
 	{
-		if (placing == false && userInterface.clicked(&buttons->at(i)))
+
+		for (int i = 0; i < activeTowers.size(); i++)
 		{
-			
-			switch(i) 
+			activeTowers.at(i)->deselect();
+		}
+
+		for (int i = 0; i < buttons->size(); i++)
+		{
+			if (placing == false && userInterface.clicked(&buttons->at(i)))
 			{
-			case 0: newBasicTower(); break;
-			case 1: newRavagerTower(); break;
-			case 2: newSynTower(); break;
-			case 3: newSabTower(); break;
-			case 4: newSenTower(); break;
-			case 5: newSuperTower(); break;
-			case 6: enemyController.startWave(); break;
+				
+				switch(i) 
+				{
+				case 0: newBasicTower(); break;
+				case 1: newRavagerTower(); break;
+				case 2: newSynTower(); break;
+				case 3: newSabTower(); break;
+				case 4: newSenTower(); break;
+				case 5: newSuperTower(); break;
+				case 6: enemyController.startWave(); break;
+				}
+
+				return;
 			}
 		}
 
-		if (placing == true && userInterface.rightClicked())
+		for (int i = 0; i < activeTowers.size(); i++)
 		{
-			placing = false;
-			activeTowers.at(activeTowers.size()-1)->place();
+
+			if (placing == false && userInterface.clicked(activeTowers.at(i)))
+			{
+				selectTower(activeTowers.at(i));
+				return;
+			}
 		}
+
 	}
+
+	if (placing == true && userInterface.rightClicked())
+		{
+			placeTower();
+			return;
+		}
+
 }
 
 void Game::shootTowers()
@@ -213,6 +253,7 @@ void Game::newBasicTower()
 
 	activeTowers.push_back(new BasicTower(&assets));
 	placingTower = activeTowers.at(activeTowers.size() -1);
+	selectTower(placingTower);
 
 	//the use of individual vectors may be avoided by using 'new' to pass pointer (not &)
 	//cleaning would have to be handled seperately however
@@ -298,6 +339,17 @@ void Game::newSuperTower()
 	placingTower = activeTowers.at(activeTowers.size() -1);
 }
 
+void Game::placeTower()
+{
+
+	if (activeTowers.at(activeTowers.size()-1)->isPlaceable())
+	{
+		placing = false;
+		activeTowers.at(activeTowers.size()-1)->place();
+	}
+
+}
+
 void Game::newDamageText(sf::Vector2f pos, int dmg)
 {
 	sf::Text newText;
@@ -308,6 +360,16 @@ void Game::newDamageText(sf::Vector2f pos, int dmg)
 	newText.setPosition(pos);
 
 	damageTexts.push_back(newText);
+}
+
+void Game::selectTower(Tower* tower)
+{
+	for (int i = 0; i < activeTowers.size(); i++)
+	{
+		activeTowers.at(i)->deselect();
+	}
+
+	tower->select();
 }
 
 vector<Tower*> Game::getActiveTowers()
@@ -347,38 +409,6 @@ bool Game::windowOpen()
 
 void Game::drawTowers()
 {
-	/*for (int i = 0; i < basicTowers.size(); i++)
-	{
-		window.draw(basicTowers.at(i));
-	}
-
-	for (int i = 0; i < ravagerTowers.size(); i++)
-	{
-		window.draw(ravagerTowers.at(i));
-	}
-
-	for (int i = 0; i < synTowers.size(); i++)
-	{
-		window.draw(synTowers.at(i));
-	}
-
-	for (int i = 0; i < sabTowers.size(); i++)
-	{
-		window.draw(sabTowers.at(i));
-	}
-
-	for (int i = 0; i < senTowers.size(); i++)
-	{
-		window.draw(senTowers.at(i));
-	}
-
-	for (int i = 0; i < superTowers.size(); i++)
-	{
-		window.draw(superTowers.at(i));
-	}*/
-
-	//!Why does it not like drawing the arary for all towers?
-
 	for (int i = 0; i < activeTowers.size(); i++)
 	{
 		window.draw(*activeTowers.at(i));

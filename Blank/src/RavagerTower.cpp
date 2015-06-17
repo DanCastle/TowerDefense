@@ -14,6 +14,10 @@ RavagerTower::RavagerTower(FileLoader* assets)
 	sprite.setTexture(assets->buttonTextures.at(1));
 	sprite.setOrigin(assets->buttonTextures.at(1).getSize().x/2,assets->buttonTextures.at(1).getSize().y/2);
 	sprite.setPosition(300,300);
+
+	rangeCircle.setRadius(range);
+	rangeCircle.setOrigin(range,range);
+	rangeCircle.setPosition(sprite.getPosition());
 }
 
 void RavagerTower::shoot(Enemy* target)
@@ -36,11 +40,8 @@ void RavagerTower::shoot(Enemy* target)
 
 void RavagerTower::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-	sf::CircleShape circle(range,30);
-	circle.setFillColor(sf::Color(255,255,255,100));
-	circle.setOrigin(range,range);
-	circle.setPosition(sprite.getPosition());
-	target.draw(circle);
+
+	if(selected) target.draw(rangeCircle);
 	target.draw(sprite);
 	
 	for(int i = 0; i < bullets.size(); i++)

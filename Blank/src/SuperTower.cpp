@@ -14,6 +14,10 @@ SuperTower::SuperTower(FileLoader* assets)
 	sprite.setTexture(assets->buttonTextures.at(5));
 	sprite.setOrigin(assets->buttonTextures.at(5).getSize().x/2,assets->buttonTextures.at(5).getSize().y/2);
 	sprite.setPosition(300,300);
+
+	rangeCircle.setRadius(range);
+	rangeCircle.setOrigin(range,range);
+	rangeCircle.setPosition(sprite.getPosition());
 }
 
 void SuperTower::shoot(Enemy* target)
@@ -36,11 +40,8 @@ void SuperTower::shoot(Enemy* target)
 
 void SuperTower::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-	sf::CircleShape circle(range,30);
-	circle.setFillColor(sf::Color(255,255,255,100));
-	circle.setOrigin(range,range);
-	circle.setPosition(sprite.getPosition());
-	target.draw(circle);
+
+	if(selected) target.draw(rangeCircle);
 	target.draw(sprite);
 	
 	for(int i = 0; i < bullets.size(); i++)

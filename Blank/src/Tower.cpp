@@ -9,7 +9,16 @@ Tower::Tower()
 	level = 1;
 	xp = 0;
 	placing = true;
+	selected = false;
+	placeable = false;
 	canShoot = false;
+
+	placementRadius = 45;
+
+	//rangeCircle.setRadius(range);
+	rangeCircle.setPointCount(30);
+	rangeCircle.setFillColor(sf::Color(255,255,255,100));
+	//rangeCircle.setPosition(sprite.getPosition());
 }
 
 void Tower::shoot(Enemy* target)
@@ -19,6 +28,7 @@ void Tower::shoot(Enemy* target)
 
 void Tower::update()
 {
+
 		for (int i = 0; i < bullets.size(); i++)
 	{
 		bullets.at(i).update();
@@ -34,8 +44,17 @@ void Tower::update()
 void Tower::setPosition(sf::Vector2f pos)
 {
 	sprite.setPosition(pos.x,pos.y);
+	rangeCircle.setPosition(pos);
 	position = pos;
 }
+
+void Tower::setPlaceable(bool placeable)
+{
+	this->placeable = placeable;
+
+	if (placeable == false) rangeCircle.setFillColor(sf::Color(255,0,0,100));
+	else rangeCircle.setFillColor(sf::Color(255,255,255,100));
+};
 
 void Tower::updateCanShoot()
 {
@@ -48,6 +67,11 @@ void Tower::updateCanShoot()
 sf::Vector2f Tower::getPosition()
 {
 	return position;
+}
+
+sf::Sprite Tower::getSprite()
+{
+	return sprite;
 }
 
 sf::Time Tower::getTimer()
@@ -63,6 +87,11 @@ int Tower::getRange()
 int Tower::getCost()
 {
 	return cost;
+}
+
+int Tower::getPlacementRadius()
+{
+	return placementRadius;
 }
 
 float Tower::getRoF()
@@ -84,11 +113,26 @@ bool Tower::outOfRange(Bullet* bullet)
 	else return false;
 }
 
+bool Tower::isPlaceable()
+{
+	return placeable;
+}
+
 void Tower::place()
 {
 	placing = false;
 	timeSinceShot.restart();
 	canShoot = true;
+}
+
+void Tower::select()
+{
+	selected = true;
+}
+
+void Tower::deselect()
+{
+	selected = false;
 }
 
 std::vector<Bullet>* Tower::getBullets()
@@ -97,10 +141,7 @@ std::vector<Bullet>* Tower::getBullets()
 }
 void Tower::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-	sf::CircleShape circle(range,30);
-	circle.setFillColor(sf::Color(255,255,255,100));
-	circle.setOrigin(range,range);
-	circle.setPosition(sprite.getPosition());
-	target.draw(circle);
+
+	if(selected) target.draw(rangeCircle);
 	target.draw(sprite);
 }

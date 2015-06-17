@@ -23,7 +23,7 @@
     <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\SabTower.h" />
     <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\SenTower.h" />
     <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\SuperTower.h" />
-    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\SynTower.h" />
+    <ClInclude Include="include\SynTower.h" />
     <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\Tower.h" />
     <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\UI.h" />
     <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\Wave.h" />

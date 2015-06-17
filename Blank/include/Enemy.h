@@ -14,15 +14,16 @@ private:
 	int targetNode;
 	int loot;
 	bool escaped;
-	bool armoured;
-	sf::Sprite sprite;
+	bool armoured, flying, speedy;
+	//sf::Sprite sprite;
+	sf::CircleShape sprite;
 	sf::Vector2f velocity;
 	sf::Vector2f position;
 	sf::RectangleShape healthBar;
 	std::vector<sf::Vector2f>* path;
 public:
 	Enemy();
-	Enemy(std::vector<sf::Vector2f>* path, FileLoader* assets, bool armour);
+	Enemy(std::vector<sf::Vector2f>* path, FileLoader* assets, bool armoured, bool flying, bool speedy);
 	void update();
 	sf::Vector2f getPosition();
 	int getRadius();

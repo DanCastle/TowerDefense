@@ -46,33 +46,47 @@ void UI::update()
 {
 	for (int i = 0; i < buttons.size(); i++)
 	{
-		if (mouseOver(&buttons.at(i)))
+		if (mouseOver(buttons.at(i).getSprite()))
 		{
 			buttons.at(i).hover();
 		}
 
-		if (!mouseOver(&buttons.at(i)))
+		if (!mouseOver(buttons.at(i).getSprite()))
 		{
 			buttons.at(i).deHover();
 		}
 	}
 }
 
-bool UI::mouseOver(Button* button)
+bool UI::mouseOver(sf::Sprite sprite)
 {
 
 	int mouseX = mouse.getPosition(*windowPointer).x;
 	int mouseY = mouse.getPosition(*windowPointer).y;
 
-	if (mouseX < button->getMinX() || mouseX > button->getMaxX() ) return false;
-	if (mouseY < button->getMinY() || mouseY > button->getMaxY() ) return false;
+	sf::FloatRect rect = sprite.getGlobalBounds();
+
+	if (mouseX < rect.left || mouseX > rect.left + rect.width) return false;
+	if (mouseY < rect.top || mouseY > rect.top + rect.height ) return false;
 
 	return true;
 }
 
+bool UI::clicked()
+{
+	if (mouse.isButtonPressed(sf::Mouse::Left)) return true;
+	else return false;
+}
+
 bool UI::clicked(Button* button)
 {
-	if (mouseOver(button) && mouse.isButtonPressed(sf::Mouse::Left)) return true;
+	if (mouseOver(button->getSprite()) && mouse.isButtonPressed(sf::Mouse::Left)) return true;
+	else return false;
+}
+
+bool UI::clicked(Tower* tower)
+{
+	if (mouseOver(tower->getSprite()) && mouse.isButtonPressed(sf::Mouse::Left)) return true;
 	else return false;
 }
 

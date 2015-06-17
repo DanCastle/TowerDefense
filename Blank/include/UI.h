@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include "FileLoader.h"
 #include "Button.h"
+#include "Tower.h"
 
 class UI : public sf::Drawable
 {
@@ -19,8 +20,10 @@ public:
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 	void newButton(int buttonNo, FileLoader* assets, int x, int y);
 	void update();
-	bool mouseOver(Button* button);
+	bool mouseOver(sf::Sprite sprite);
+	bool clicked();
 	bool clicked(Button* button);
+	bool clicked(Tower* tower);
 	bool rightClicked();
 	void textOnButton(sf::Text* text, Button button);
 	std::vector<Button>* getButtons();

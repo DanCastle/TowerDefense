@@ -52,8 +52,10 @@ public:
 	void newSabTower();
 	void newSenTower();
 	void newSuperTower();
+	void placeTower();
 	void drawTowers();
 	void newDamageText(sf::Vector2f pos, int dmg);
+	void selectTower(Tower* tower);
 	vector<Tower*> getActiveTowers();
 	bool collides(Bullet bullet, Enemy enemy);
 	bool mouseOver(Button* button);

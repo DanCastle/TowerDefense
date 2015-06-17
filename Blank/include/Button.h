@@ -17,6 +17,7 @@ public:
 	Button(FileLoader* assets, int buttonNo, int x, int y);
 	void setTexture(sf::Texture tex);
 	sf::Texture getTexture();
+	sf::Sprite getSprite();
 	void hover();
 	void deHover();
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;

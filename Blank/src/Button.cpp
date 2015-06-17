@@ -32,6 +32,11 @@ sf::Texture Button::getTexture()
 	return *sprite.getTexture();
 }
 
+sf::Sprite Button::getSprite()
+{
+	return sprite;
+}
+
 void Button::hover()
 {
 	isHover = true;

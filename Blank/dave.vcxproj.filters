@@ -60,9 +60,6 @@
     <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\Tower.h">
       <Filter>Header Files\Towers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\SynTower.h">
-      <Filter>Header Files\Towers</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\SabTower.h">
       <Filter>Header Files\Towers</Filter>
     </ClInclude>
@@ -83,6 +80,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\..\Dan%27s PC\Desktop\Portfolio\Games\TowerDefense\Blank\include\Player.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SynTower.h">
+      <Filter>Header Files\Towers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

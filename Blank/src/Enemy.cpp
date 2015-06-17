@@ -15,27 +15,31 @@ Enemy::Enemy()
 	healthBar.setSize(sf::Vector2f(radius, radius*2));
 }
 
-Enemy::Enemy(std::vector<sf::Vector2f>* path, FileLoader* assets, bool armour)
+Enemy::Enemy(std::vector<sf::Vector2f>* path, FileLoader* assets, bool armoured, bool flying, bool speedy)
 {
 	this->path = path;
 
 	startHealth = 100;
 	health = 100;
 	loot = 10;
+	radius = 12;
 
 	speed = 3; //magicnumber!
 	position = path->at(0);
 	moveTo(path->at(1));
 
 	escaped = false;
-	armoured = armour;
+	this->armoured = armoured;
+	this->flying = flying;
+	this->speedy = speedy;
+
+	if(speedy) speed*=2;
 	
-	sprite.setTexture(assets->enemySprites.at(0));
-	radius = sprite.getLocalBounds().width/2;
-	//sprite.setRadius(radius);
+	//sprite.setTexture(assets->enemySprites.at(0));
+	//radius = sprite.getLocalBounds().width/2;
+	sprite.setRadius(radius);
 	sprite.setOrigin(radius,radius);
-	
-	//sprite.setFillColor(sf::Color::White);
+	sprite.setFillColor(sf::Color::White);
 
 	targetNode = 1;
 
@@ -48,7 +52,9 @@ Enemy::Enemy(std::vector<sf::Vector2f>* path, FileLoader* assets, bool armour)
 	//Armour section
 	if (armoured == true)
 	{
-		sprite.setColor(sf::Color::Red);
+		//sprite.setColor(sf::Color::Red);
+		sprite.setOutlineThickness(2);
+		sprite.setOutlineColor(sf::Color::Black);
 	}
 
 }
